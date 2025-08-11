@@ -28,11 +28,9 @@ public class SwagLabsTest extends BaseTest {
     @Test(priority = 1, dataProvider = "loginData")
     public void homepageLoadVerification(String username, String password) {
         test = extent.createTest("Homepage Load Verification with user: " + username);
-
         driver.findElement(By.id("user-name")).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
         driver.findElement(By.id("login-button")).click();
-
         boolean homepageDisplayed = driver.findElement(By.className("inventory_list")).isDisplayed();
         Assert.assertTrue(homepageDisplayed, "Homepage is not displayed after login");
     }
@@ -102,4 +100,5 @@ public class SwagLabsTest extends BaseTest {
     }
 
 }
+
 
